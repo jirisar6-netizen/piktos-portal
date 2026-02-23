@@ -3,41 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piktos Portal | Synthesis studio</title>
+    <title>PIKTOS PORTAL | Synthesis studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #1A1A1A; color: white; font-family: sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 18px; }
-        .orange-text { color: #e95420; }
-        .orange-btn { background-color: #e95420; transition: 0.3s; }
-        .orange-btn:hover { background-color: #ff6a3d; transform: scale(1.05); }
+        body { background-color: #0f0f0f; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .accent-orange { color: #e95420; }
+        .bg-orange { background-color: #e95420; }
+        .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: #22c55e; box-shadow: 0 0 10px #22c55e; }
     </style>
 </head>
-<body class="p-6">
-    <div class="max-w-4xl mx-auto">
-        <header class="glass p-8 mb-8 text-center">
-            <h1 class="text-5xl font-black tracking-tighter mb-2">PIKTOS <span class="orange-text">PORTAL</span></h1>
-            <p class="opacity-70 uppercase text-xs tracking-widest mb-6">by Synthesis studio</p>
-            <p class="text-xl mb-8 opacity-90">Komunikační most pro Daniela, Štěpánka a všechny děti.</p>
-            <button class="orange-btn px-8 py-4 rounded-full font-bold uppercase tracking-wide">Vstoupit do aplikace</button>
-        </header>
+<body class="min-h-screen">
 
-        <section class="grid md:grid-cols-2 gap-6 mb-8">
-            <div class="glass p-6">
-                <h2 class="orange-text font-bold mb-4 uppercase">❤️ Naše Mise</h2>
-                <p class="opacity-80">Piktos vznikl z potřeby vytvořit bezpečný komunikační kanál pro <strong>Daniela</strong> a <strong>Štěpánka</strong>. Cílem je podpořit jejich individuální rozvoj skrze moderní technologie.</p>
-            </div>
-            <div class="glass p-6">
-                <h2 class="orange-text font-bold mb-4 uppercase">🛠️ Technologie</h2>
-                <p class="opacity-80">Optimalizace 144Hz, standardy ARASAAC a bezpečné cloudové úložiště přes Google Sheets API.</p>
+    <nav class="max-w-6xl mx-auto p-6 flex justify-between items-center">
+        <div class="font-black text-2xl tracking-tighter">PIKTOS <span class="accent-orange">PORTAL</span></div>
+        <div class="glass-panel px-4 py-2 text-xs font-mono">
+            <span class="status-dot mr-2"></span> SYSTEM ONLINE
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto mt-12 px-6">
+        <section class="glass-panel p-10 text-center mb-10">
+            <h1 class="text-6xl font-black mb-6 leading-none">Váš komunikační<br><span class="accent-orange">vesmír.</span></h1>
+            <p class="text-xl opacity-60 mb-8 max-w-2xl mx-auto">Průvodce a technický dashboard pro projekt Piktos by Synthesis studio. Navrženo pro Daniela a Štěpánka.</p>
+            <div class="flex gap-4 justify-center">
+                <a href="#" class="bg-orange px-8 py-4 rounded-xl font-bold uppercase hover:scale-105 transition-transform">Spustit Piktos App</a>
+                <a href="#docs" class="glass-panel px-8 py-4 rounded-xl font-bold uppercase">Dokumentace</a>
             </div>
         </section>
 
-        <footer class="text-center opacity-50 text-sm mt-12">
-            <p>Vyrobil Jiří Šár pro malého Daniela a Štěpánka.</p>
-            <p class="mt-2 text-xs">Piktos Portal V1.0.0 • 2026 Synthesis studio</p>
-        </footer>
-    </div>
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <div class="glass-panel p-6">
+                <h3 class="opacity-50 text-xs font-bold uppercase mb-2">Aktuální verze</h3>
+                <p class="text-2xl font-mono">B0.1.20</p>
+            </div>
+            <div class="glass-panel p-6">
+                <h3 class="opacity-50 text-xs font-bold uppercase mb-2">Cloud Sync</h3>
+                <p class="text-2xl font-mono accent-orange">READY</p>
+            </div>
+            <div class="glass-panel p-6">
+                <h3 class="opacity-50 text-xs font-bold uppercase mb-2">GitHub Sync</h3>
+                <p class="text-2xl font-mono">CONNECTED</p>
+            </div>
+        </div>
+
+        <section id="docs" class="glass-panel p-10 mb-20">
+            <h2 class="text-3xl font-bold mb-6">Příběh za kódem</h2>
+            <div class="space-y-4 opacity-80 leading-relaxed">
+                <p>Piktos není jen software, je to vize. V rámci <strong>Synthesis studio</strong> vyvíjíme nástroje, které mají reálný dopad na rodinný život.</p>
+                <p>Důraz klademe na <strong>stabilitu, rychlost (144Hz) a sémantickou logiku</strong>, která pomáhá Danielovi vyjádřit jeho potřeby bez frustrace.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="p-10 text-center opacity-30 text-xs border-t border-white/5">
+        <p>© 2026 Synthesis studio | Jiří Šár | Pro Daniela a Štěpánka</p>
+    </footer>
+
 </body>
 </html>
-
