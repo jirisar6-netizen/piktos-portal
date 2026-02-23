@@ -5,59 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PIKTOS PORTAL | Synthesis studio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0f0f0f; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
-        .accent-orange { color: #e95420; }
-        .bg-orange { background-color: #e95420; }
-        .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: #22c55e; box-shadow: 0 0 10px #22c55e; }
+        :root { --orange: #e95420; --dark: #0a0a0a; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 28px; }
+        .orange-gradient { background: linear-gradient(135deg, #e95420 0%, #ff7849 100%); }
+        .text-orange { color: #e95420; }
+        .feature-card:hover { transform: translateY(-5px); border-color: rgba(233, 84, 32, 0.4); transition: all 0.3s ease; }
+        .status-pulse { width: 12px; height: 12px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 10px #22c55e; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="selection:bg-orange-500 selection:text-white">
 
-    <nav class="max-w-6xl mx-auto p-6 flex justify-between items-center">
-        <div class="font-black text-2xl tracking-tighter">PIKTOS <span class="accent-orange">PORTAL</span></div>
-        <div class="glass-panel px-4 py-2 text-xs font-mono">
-            <span class="status-dot mr-2"></span> SYSTEM ONLINE
+    <nav class="sticky top-0 z-50 p-6 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter">PIKTOS <span class="text-orange">PORTAL</span></div>
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex glass px-4 py-2 text-[10px] font-bold tracking-widest uppercase">
+                    <span class="status-pulse mr-3 self-center"></span> System v0.1.20 Live
+                </div>
+            </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto mt-12 px-6">
-        <section class="glass-panel p-10 text-center mb-10">
-            <h1 class="text-6xl font-black mb-6 leading-none">Váš komunikační<br><span class="accent-orange">vesmír.</span></h1>
-            <p class="text-xl opacity-60 mb-8 max-w-2xl mx-auto">Průvodce a technický dashboard pro projekt Piktos by Synthesis studio. Navrženo pro Daniela a Štěpánka.</p>
-            <div class="flex gap-4 justify-center">
-                <a href="#" class="bg-orange px-8 py-4 rounded-xl font-bold uppercase hover:scale-105 transition-transform">Spustit Piktos App</a>
-                <a href="#docs" class="glass-panel px-8 py-4 rounded-xl font-bold uppercase">Dokumentace</a>
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        
+        <section class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+            <div>
+                <h1 class="text-7xl font-black leading-[0.9] mb-6 tracking-tighter">Dáváme <br><span class="text-orange">hlas</span> těm,<br>kteří ho hledají.</h1>
+                <p class="text-xl opacity-60 mb-10 leading-relaxed max-w-lg">Digitální komunikační systém nové generace. Navrženo v Synthesis studio pro Daniela, Štěpánka a komunitu rodičů, kteří věří v sílu technologií.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://synthesis-os.vercel.app/" class="orange-gradient px-10 py-5 rounded-2xl font-bold uppercase tracking-wide hover:scale-105 transition-transform shadow-2xl shadow-orange-900/20">Spustit Piktos App</a>
+                    <a href="#pribeh" class="glass px-10 py-5 rounded-2xl font-bold uppercase tracking-wide hover:bg-white/5 transition-colors">Náš Příběh</a>
+                </div>
+            </div>
+            <div class="glass p-2 relative">
+                <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&q=80&w=1000" alt="Tablet App Preview" class="rounded-[24px] opacity-80">
+                <div class="absolute -bottom-6 -left-6 glass p-6 shadow-2xl">
+                    <p class="text-orange font-black text-3xl">144Hz</p>
+                    <p class="text-[10px] uppercase opacity-50 font-bold">Plynulost systému</p>
+                </div>
             </div>
         </section>
 
-        <div class="grid md:grid-cols-3 gap-6 mb-10">
-            <div class="glass-panel p-6">
-                <h3 class="opacity-50 text-xs font-bold uppercase mb-2">Aktuální verze</h3>
-                <p class="text-2xl font-mono">B0.1.20</p>
+        <section class="grid md:grid-cols-3 gap-6 mb-24">
+            <div class="glass p-8 feature-card">
+                <div class="text-4xl mb-4 text-orange">🧠</div>
+                <h3 class="text-xl font-bold mb-2 uppercase tracking-tight text-orange">Smart Bar</h3>
+                <p class="opacity-60 text-sm leading-relaxed text-orange">Inteligentní predikce karet na základě denní doby a zvyklostí dítěte.</p>
             </div>
-            <div class="glass-panel p-6">
-                <h3 class="opacity-50 text-xs font-bold uppercase mb-2">Cloud Sync</h3>
-                <p class="text-2xl font-mono accent-orange">READY</p>
+            <div class="glass p-8 feature-card">
+                <div class="text-4xl mb-4 text-orange">🔊</div>
+                <h3 class="text-xl font-bold mb-2 uppercase tracking-tight text-orange">Custom Voice</h3>
+                <p class="opacity-60 text-sm leading-relaxed text-orange">Možnost nahrát vlastní hlas pro každou kartu. Daniel slyší hlasy, které zná.</p>
             </div>
-            <div class="glass-panel p-6">
-                <h3 class="opacity-50 text-xs font-bold uppercase mb-2">GitHub Sync</h3>
-                <p class="text-2xl font-mono">CONNECTED</p>
-            </div>
-        </div>
-
-        <section id="docs" class="glass-panel p-10 mb-20">
-            <h2 class="text-3xl font-bold mb-6">Příběh za kódem</h2>
-            <div class="space-y-4 opacity-80 leading-relaxed">
-                <p>Piktos není jen software, je to vize. V rámci <strong>Synthesis studio</strong> vyvíjíme nástroje, které mají reálný dopad na rodinný život.</p>
-                <p>Důraz klademe na <strong>stabilitu, rychlost (144Hz) a sémantickou logiku</strong>, která pomáhá Danielovi vyjádřit jeho potřeby bez frustrace.</p>
+            <div class="glass p-8 feature-card">
+                <div class="text-4xl mb-4 text-orange">🛡️</div>
+                <h3 class="text-xl font-bold mb-2 uppercase tracking-tight text-orange">Guardian SOS</h3>
+                <p class="opacity-60 text-sm leading-relaxed text-orange">Rychlý přístup k nouzovým kontaktům v situacích, kdy je potřeba pomoc.</p>
             </div>
         </section>
+
+        <section id="pribeh" class="glass p-12 mb-24 relative overflow-hidden">
+            <div class="relative z-10 max-w-2xl">
+                <h2 class="text-4xl font-black mb-8 uppercase tracking-tighter">Za každým řádkem <br><span class="text-orange">kódu je rodina.</span></h2>
+                <div class="space-y-6 opacity-80 leading-relaxed text-lg italic">
+                    <p>"Piktos vznikl jako osobní odpověď na bariéry v komunikaci. Je věnován Danielovi, Štěpánkovi a Kateřině. Chtěl jsem vytvořit nástroj, který nebude jen suchou tabulkou, ale živým systémem, který roste s dětmi."</p>
+                    <p class="text-orange font-bold not-italic">— Jiří Šár, zakladatel Synthesis studio</p>
+                </div>
+            </div>
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-600/10 to-transparent pointer-events-none"></div>
+        </section>
+
     </main>
 
-    <footer class="p-10 text-center opacity-30 text-xs border-t border-white/5">
-        <p>© 2026 Synthesis studio | Jiří Šár | Pro Daniela a Štěpánka</p>
+    <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="opacity-30 text-xs uppercase tracking-[0.2em]">© 2026 Synthesis studio • Made for Daniel & Štěpánek</div>
+        <div class="flex gap-8 opacity-60 text-xs font-bold uppercase tracking-widest">
+            <a href="#" class="hover:text-orange">GitHub</a>
+            <a href="#" class="hover:text-orange">Facebook</a>
+            <a href="#" class="hover:text-orange">Kontakt</a>
+        </div>
     </footer>
 
 </body>
